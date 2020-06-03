@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"></meta>
+        <title>gt eq </title>
+    </head>
+    <body>
+        <div>
+            <h1>EQ</h1>
+            <input th:value="${name}"/>
+            <br/>
+            <input th:value="${age gt 30 ? '中年':'年轻'}"/>
+            <br/>
+            <a th:if="${gender eq 'male'}" th:href="@{http://favorites.ren/}"> 男性空间 </a>
+        </div>
+    </body>
+</html>

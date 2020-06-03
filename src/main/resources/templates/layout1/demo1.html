@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<!--名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Thymeleaf Layout</title>
+    </head>
+        <!--th:insert 把代码块插入当前div中，类似的有th:replace，th:include，~{} ：代码块表达式 -->
+        <!--th:insert 和 th:replace 区别，insert 只是加载，replace 是替换。Thymeleaf 3.0 推荐使用 th:insert 替换 2.0 的 th:replace。-->
+        <div th:insert="~{layout1/common::thCommon}"></div>
+        <div th:replace="~{layout1/common::#idCommon}"></div>
+    </body>
+</html>

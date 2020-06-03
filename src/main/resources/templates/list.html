@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"></meta>
+        <title>If/Unless </title>
+    </head>
+    <body>
+        <div>
+            <h1>for 循环</h1>
+            <table>
+                <tr th:each="dept,iterStat : ${depts}">
+                    <td th:text="${iterStat.index}">index</td>
+                    <td th:text="${dept.deptno}">neo</td>
+                    <td th:text="${dept.dname}">6</td>
+                    <td th:text="${dept.loc}">213</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

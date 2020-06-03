@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>IT Thymeleaf 内置方法</title>
+    </head>
+    <body>
+        <h3>#strings </h3>
+        <div th:if="${not #strings.isEmpty(itStr)}" >
+            <p>Old Str : <span th:text="${itStr}"/></p>
+            <p>toUpperCase : <span th:text="${#strings.toUpperCase(itStr)}"/></p>
+            <p>toLowerCase : <span th:text="${#strings.toLowerCase(itStr)}"/></p>
+            <p>equals : <span th:text="${#strings.equals(itStr, 'helloworld')}"/></p>
+            <p>equalsIgnoreCase : <span th:text="${#strings.equalsIgnoreCase(itStr, 'helloworld')}"/></p>
+            <p>indexOf : <span th:text="${#strings.indexOf(itStr, 'r')}"/></p>
+            <p>substring : <span th:text="${#strings.substring(itStr, 2, 8)}"/></p>
+            <p>replace : <span th:text="${#strings.replace(itStr, 'or', 'IT')}"/></p>
+            <p>startsWith : <span th:text="${#strings.startsWith(itStr, 'he')}"/></p>
+            <p>contains : <span th:text="${#strings.contains(itStr, 'ow')}"/></p>
+        </div>
+        <h3>#numbers </h3>
+        <div>
+            <p>formatDecimal 整数部分随意，小数点后保留两位，四舍五入: <span th:text="${#numbers.formatDecimal(itNum, 0, 2)}"/></p>
+            <p>formatDecimal 整数部分保留五位数，小数点后保留两位，四舍五入: <span th:text="${#numbers.formatDecimal(itNum, 5, 2)}"/></p>
+        </div>
+        <h3>#bools </h3>
+        <div th:if="${#bools.isTrue(itBool)}">
+            <p th:text="${itBool}"></p>
+        </div>
+        <h3>#arrays </h3>
+        <div th:if="${not #arrays.isEmpty(itArray)}">
+            <p>length : <span th:text="${#arrays.length(itArray)}"/></p>
+            <p>contains : <span th:text="${#arrays.contains(itArray, 5)}"/></p>
+            <p>containsAll : <span th:text="${#arrays.containsAll(itArray, itArray)}"/></p>
+        </div>
+        <h3>#lists </h3>
+        <div th:if="${not #lists.isEmpty(itList)}">
+            <p>size : <span th:text="${#lists.size(itList)}"/></p>
+            <p>contains : <span th:text="${#lists.contains(itList, 0)}"/></p>
+            <p>sort : <span th:text="${#lists.sort(itList)}"/></p>
+        </div>
+        <h3>#maps </h3>
+        <div th:if="${not #maps.isEmpty(itMap)}">
+            <p>size : <span th:text="${#maps.size(itMap)}"/></p>
+            <p>containsKey : <span th:text="${#maps.containsKey(itMap, 'thName')}"/></p>
+            <p>containsValue : <span th:text="${#maps.containsValue(itMap, '#maps')}"/></p>
+        </div>
+        <h3>#dates </h3>
+        <div>
+            <p>format : <span th:text="${#dates.format(itDate)}"/></p>
+            <p>custom format : <span th:text="${#dates.format(itDate, 'yyyy-MM-dd HH:mm:ss')}"/></p>
+            <p>day : <span th:text="${#dates.day(itDate)}"/></p>
+            <p>month : <span th:text="${#dates.month(itDate)}"/></p>
+            <p>monthName : <span th:text="${#dates.monthName(itDate)}"/></p>
+            <p>year : <span th:text="${#dates.year(itDate)}"/></p>
+            <p>dayOfWeekName : <span th:text="${#dates.dayOfWeekName(itDate)}"/></p>
+            <p>hour : <span th:text="${#dates.hour(itDate)}"/></p>
+            <p>minute : <span th:text="${#dates.minute(itDate)}"/></p>
+            <p>second : <span th:text="${#dates.second(itDate)}"/></p>
+            <p>createNow : <span th:text="${#dates.createNow()}"/></p>
+        </div>
+    </body>
+</html>
